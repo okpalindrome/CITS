@@ -1,0 +1,68 @@
+
+<hr class="container">
+<section class="jumpotron text-center">
+  <p class="lead" id="cnc">Create New Case</p>
+  <p>Fill all the details carefully with right information.</p>
+</section>
+
+<br><br>
+<form [formGroup]="caseForm" (ngSubmit)="submitForm()" class="container">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Case ID</label>
+      <input formControlName="id" type="text" class="form-control" placeholder="Case Number">
+    </div>
+    <div class="form-group col-md-6">
+      <label >Case Name</label>
+      <input formControlName="case_name" type="text" class="form-control" placeholder="Case Name">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Complainant</label>
+      <input formControlName="complainant" type="text" class="form-control" placeholder="Complainant Name">
+    </div>
+    <div class="form-group col-md-6">
+      <label >Suspect</label>
+      <input formControlName="suspect" type="text" class="form-control" placeholder="Suspect Name">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Date</label>
+      <input formControlName="date" class="form-control" type="date">
+    </div>
+    <div class="form-group col-md-6">
+      <label >Location</label>
+      <input formControlName="location" type="text" class="form-control" placeholder="Format: city/state/pincode">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Assign Agent</label>
+    <select formControlName="assigned_agent" class="form-control">
+      <option selected>Choose...</option>
+      <option>Mr. Elliot Nuke</option>
+      <option>Mr. Ramesh Pandey</option>
+      <option>Mr. Anand Choudhary</option>
+      <option>Mrs. Mona Shrey</option>
+      <option>Mr. John Merryson</option>
+      <option>Mr. Mike Dell</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Description And A Note To Agent</label>
+    <textarea formControlName="note" class="form-control" rows="3"></textarea>
+  </div>
+
+  <div class="text-center">
+  <button type="submit" class="btn btn-primary">Submit form</button>
+  </div>
+
+</form>
+<br><br>
+<hr class="container">
+<br>

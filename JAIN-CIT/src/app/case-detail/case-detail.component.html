@@ -1,0 +1,31 @@
+
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <p>ID: #{{ actcase.id }}</p>
+    <p>{{actcase.a_date}}</p>
+    <p>{{ actcase.agent_name }}</p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ actcase.case_name }}</h5>
+    <p class="card-text">Complainant: {{ actcase.complainant }}</p>
+    <p class="card-text">Suspect: {{ actcase.suspect }}</p>
+    <p class="card-text">{{ actcase.location }}</p>
+
+    <p class="card-text">Initial Description: {{ actcase.note }}</p>
+    <div class="jumpotron justify-content-center">
+      <h5 class="lead">Commits</h5>
+      <hr>
+      <p><span class="badge badge-secondary">{{actcase.a_date}} @{{ actcase.agent_name }}</span>
+        - Gathered the forensic evidence on computer (captured the voice mail regarding theft).</p>
+
+        <p><span class="badge badge-secondary">{{actcase.a_date}} @{{ actcase.agent_name }}</span>
+          - Analysed the previous criminal records on suspect.</p>
+
+          <p><span class="badge badge-secondary">{{actcase.a_date}} @{{ actcase.agent_name }}</span>
+            - Held case suspect's, and all people related in it under custody.</p>
+
+            <p><span class="badge badge-secondary">{{actcase.a_date}} @{{ actcase.agent_name }}</span>
+              - Suspect under </p>
+    </div>
+  </div>
+</div>

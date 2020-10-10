@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+  <a class="navbar-brand mr-auto" href="#">
+    <img src="../favicon.ico" width="30" height="30" class="d-inline-block align-top"
+    alt="" loading="lazy">
+    Criminal Investigation Tracking System
+  </a>
+  <button class="btn btn-primary" (click)="showForm = !showForm">New Case</button>
+</div>
+</nav>
+
+<br>
+<section class="container jumpotron">
+  <p class="lead">Welcome, Mr. Nitin Choudhary</p>
+</section>
+<br>
+
+<div class="container">
+<div class="card">
+  <div class="card-header">
+    <img src="../favicon.ico"> Important Note
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>Organization's policy states that all the information should contain the high level of honesty and authenticity
+        at all the stages of generating and modifying the content on cases. All user activity is carefully
+         recorded on network for future reference. unethical behaviour such as recording, capturing the details of any existing case
+         publically disclosing it is stricky prohibited.</p>
+      <p>If you find any issue or technical glitch on system while performing the operation please call the support and immediately inform the right authority.</p>
+      <footer class="blockquote-footer">cbi.gov.in - <cite title="Source Title">All Rights Reserved</cite></footer>
+    </blockquote>
+  </div>
+</div>
+</div>
+<br><br>
+
+<app-case-create *ngIf="showForm" (caseCreated)="handleCaseCreate($event)"></app-case-create>
+
+<div class="container d-flex">
+
+  <div class="container active-cases-list overflow-auto">
+    <p class="lead">List of Active Cases</p>
+    <hr>
+
+    <!-- <div class="overflow-auto"> -->
+      <app-cases
+      *ngFor="let case of cases |async"
+      [a_date]="case.a_date"
+      [agent_name]="case.agent_name"
+      [case_name]="case.case_name"
+      (click)="setActiveCase(case)">
+      </app-cases>
+    <!-- </div> -->
+  </div>
+
+  <div class="container users-list justify-content-center">
+    <p class="lead">Case Detail</p>
+    <hr>
+    <app-case-detail *ngIf="activeCase"
+    [actcase]="activeCase" ></app-case-detail>
+  </div>
+</div>
+
+
+<br><br>
+
+    <div class="alert alert-info" role="alert">
+      <div class="container">
+      <section class="jumpotron text-center">
+      <p>Whatever you do here stays here on the network, you can't modify or delete anything once you submit. Enjoy the integrity :)</p>
+      <p class="lead text-muted">Powered By Blockchain</p>
+      </section>
+      </div>
+    </div>
+
